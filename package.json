@@ -1,11 +1,11 @@
 {
-  "name": "whatsbot-v2",
-  "version": "2.0.0",
+  "name": "whatsbot",
+  "version": "2.1.0",
   "description": "WhatsApp Bot Using Lib Baileys",
   "main": "index.js",
   "type": "commonjs",
   "dependencies": {
-    "Wa-Web": "github:adiwajshing/Baileys",
+    "@adiwajshing/baileys": "^4.4.0",
     "@adiwajshing/keyed-db": "^0.2.4",
     "awesome-phonenumber": "^2.64.0",
     "axios": "^0.27.2",
@@ -62,16 +62,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/AiDarkEzio/WhatsBot-V2.git"
+    "url": "git+https://github.com/pradeeprudh/whatsbot.git"
   },
   "keywords": [
     "multi-devices",
     "whatsapp-bot"
   ],
-  "author": "AiDarkEzio",
+  "author": "pradeeprudh",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/AiDarkEzio/WhatsBot-V2/issues"
+    "url": "https://github.com/pradeeprudh/whatsbot/issues"
   },
-  "homepage": "https://zeqanpx.github.io/WhatsBot_V2"
+  "homepage": "https://github.com/pradeeprudh/whatsbot#readme"
 }
