@@ -1,28 +1,35 @@
-/* ═══════════════════════════════════════════════════════ //
-=> If you want to recode, reupload,
-=> or copy the codes/script,
-=> pls give credit,
-=> no credit? i will take action immediately.
-==> Copyright (C) 2022 Dark_Ezio.
-==> Licensed under the  MIT License;
-===> you may not use this file except in compliance with the License.
-=> Thank you to Lord Buddha, Family and Myself.
-=> Whats Bot - Dark_Ezio.
-// ════════════════════════════ */
-
-require("./global");
-const { default: WASocket, DisconnectReason, useSingleFileAuthState, fetchLatestBaileysVersion, jidNormalizedUser, makeInMemoryStore, DEFAULT_CONNECTION_CONFIG, DEFAULT_LEGACY_CONNECTION_CONFIG, } = require("Wa-Web");
-const fs = require("fs");
-const chalk = require("chalk");
-const pino = require("pino");
-const path = require("path");
-const { Boom } = require("@hapi/boom");
-const { Simple, upsert, eziofunc } = require("./lib");
+require("./global")
+const { 
+    default: WASocket, 
+    DisconnectReason, 
+    useSingleFileAuthState, 
+    useMultiFileAuthState,
+    fetchLatestBaileysVersion, 
+    delay, 
+    jidNormalizedUser, 
+    makeInMemoryStore,
+    DEFAULT_CONNECTION_CONFIG, 
+    DEFAULT_LEGACY_CONNECTION_CONFIG,
+    proto
+} = require("@adiwajshing/baileys")
+const fs = require("fs")
+const chalk = require("chalk")
+const pino = require("pino")
+const yargs = require("yargs")
+const path = require("path")
+const { Boom } = require("@hapi/boom")
+const { Collection, Simple, Store, upsert, eziofunc } = require("./lib")
+const WebMessageInfo = proto.WebMessageInfo
 const Welcome = require("./lib/Welcome");
-const jsoConfig = JSON.parse(fs.readFileSync("./config.json"));
-const ezio = require("./events");
+const jsoConfig = JSON.parse(fs.readFileSync('./config.json'))
+const ezio = require('./events')
 const { chatting } = eziofunc;
-const { serialize, WAConnection } = Simple;
+const { serialize, WAConnection } = Simple
+const Commands = new Collection()
+// global.prefa = /^[#$+.?_&<>!/\\]/
+// Commands.prefix = prefa
+
+// ## globle vars
 global.mydb = {};
 global.mydb.users = new Array();
 global.mydb.hits = new Number();
