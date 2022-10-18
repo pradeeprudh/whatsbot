@@ -1,7 +1,7 @@
 {
   "APIs": {
     "zenz": "https://zenzapis.xyz",
-    "apikey": "135aef58fe9c"
+    "apikey": "YOURAPIKEY"
   },
   "options": {
     "autoRead": true,
@@ -14,7 +14,7 @@
     "author": "https://zenzapi.xyz"
   },
   "owner": [
-    "9895809960", 
+    "94761539856", 
     "replase-your-numb"
   ],
   "timezone": "Asia/Jakarta",
