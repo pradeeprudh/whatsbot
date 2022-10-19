@@ -1,6 +1,6 @@
 {
   "name": "whatsbot",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "description": "WhatsApp Bot Using Lib Baileys",
   "main": "index.js",
   "type": "commonjs",
@@ -57,7 +57,7 @@
     "qrcode-terminal": "^0.12.0"
   },
   "scripts": {
-    "start": "supervisor -w lib,index.js,modules index.js",
+    "start": "supervisor -w lib,index.js,plugins index.js",
     "test": "node index.js"
   },
   "repository": {
