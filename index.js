@@ -39,7 +39,7 @@ const { state, saveState } = useSingleFileAuthState( "./session.json", pino({ le
 const store = makeInMemoryStore({ logger: pino().child({ level: "silent", stream: "store" }),});
 store.readFromFile("./database/json/baileys/store_multi.json");
 setInterval(() => { store.writeToFile("./database/baileys/store_multi.json")}, 30 * 1000);
-fs.readdirSync("./modules").forEach((file) => {if (path.extname(file).toLowerCase() == ".js") {require(`./modules/${file}`);}});
+fs.readdirSync("./plugins").forEach((file) => {if (path.extname(file).toLowerCase() == ".js") {require(`./plugins/${file}`);}});
 global.api = (name, path = "/", query = {}, apikeyqueryname) => (name in jsoConfig.APIs ? jsoConfig.APIs[name] : name) + path + (query || apikeyqueryname ? "?" + new URLSearchParams( Object.entries({ ...query, ...(apikeyqueryname ? { [apikeyqueryname]: jsoConfig.APIs.apikey } : {}), }) ) : "");
 const WhatsBotConnect = async () => {
   let { version, isLatest } = await fetchLatestBaileysVersion();
